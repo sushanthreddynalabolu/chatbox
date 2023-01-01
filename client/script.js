@@ -61,7 +61,7 @@ const handleSubmit=async(e)=>{
   const messageDiv=document.getElementById(uniqueId);
   loader(messageDiv)
   //fetch the response or data from server
-  const response= await fetch('http://localhost:5000',{
+  const response= await fetch('https://chatbox-bqf2.onrender.com',{
     method:'POST',
     headers:{
       'Content-Type':'application/json'
