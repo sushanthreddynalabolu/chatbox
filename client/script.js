@@ -55,7 +55,7 @@ const handleSubmit=async(e)=>{
   form.reset();
   //bot's  chatstripe
   const uniqueId=generateUniqueid();
-  chatContainer.innerHTML+=chatStripe(true, '',uniqueId);
+  chatContainer.innerHTML+=chatStripe(true, ' ',uniqueId);
 
   chatContainer.scrollTop=chatContainer.scrollHeight;
   const messageDiv=document.getElementById(uniqueId);
@@ -67,7 +67,7 @@ const handleSubmit=async(e)=>{
       'Content-Type':'application/json'
     },
     body:JSON.stringify({
-      prompt:axios.data.get('prompt')
+      prompt:data.get('prompt')
     })
   })
   clearInterval(loadInterval);
