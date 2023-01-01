@@ -4,7 +4,6 @@ import cors from 'cors';
 import { Configuration,OpenAIApi } from 'openai';
 
 dotenv.config();
-console.log(process.env.OPENAI_API_KEY);
 
 
 const configuration=new Configuration({
@@ -17,13 +16,13 @@ app.use(cors());
 app.use(express.json());
 app.get('/',async (req,res)=>{
     res.status(200).send({
-        message:'hello world from creativaty'
+        message:'hello world from creativity'
     })
 });
 app.post('/',async (req,res)=>{
     try {
         const prompt=req.body.prompt;
-        const response=await openai.createCompletion({
+        const response = await openai.createCompletion({
             model:"text-davinci-003",
             prompt:`${prompt}`,
   temperature:0,
@@ -34,7 +33,7 @@ app.post('/',async (req,res)=>{
    
         })
         res.status(200).send({
-            bot:response.data.choices[0].text
+            bot:response.data.choices[0].text,
         })
     } catch (error) {
         console.log(error);
@@ -42,6 +41,4 @@ app.post('/',async (req,res)=>{
         
     }
 })
-app.listen(5000,()=>{
-    console.log('server is running on port http://localhost:5000')
-})
+app.listen(5000,()=>console.log('server is running on port http://localhost:5000'))
