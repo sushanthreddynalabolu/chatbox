@@ -55,7 +55,7 @@ const handleSubmit=async(e)=>{
   form.reset();
   //bot's  chatstripe
   const uniqueId=generateUniqueid();
-  chatContainer.innerHTML+=chatStripe(true, ' ',uniqueId);
+  chatContainer.innerHTML+=chatStripe(true, ' ' , uniqueId);
 
   chatContainer.scrollTop=chatContainer.scrollHeight;
   const messageDiv=document.getElementById(uniqueId);
@@ -71,7 +71,7 @@ const handleSubmit=async(e)=>{
     })
   })
   clearInterval(loadInterval);
-  messageDiv.innerHTML='';
+  messageDiv.innerHTML=' ';
   if(response.ok){
     const data=await response.json();
     const parsedData=data.bot.trim();

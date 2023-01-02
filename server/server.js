@@ -31,10 +31,10 @@ app.post('/',async (req,res)=>{
   frequency_penalty:0.5,
   presence_penalty:0,
    
-        })
+        });
         res.status(200).send({
-            bot:response.data.choices[0].text,
-        })
+            bot:response.data.choices[0].text
+        });
     } catch (error) {
         console.log(error);
         res.status(500).send(error || 'Something went wrong')
