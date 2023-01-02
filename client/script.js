@@ -60,11 +60,14 @@ const handleSubmit=async(e)=>{
   chatContainer.scrollTop=chatContainer.scrollHeight;
   const messageDiv=document.getElementById(uniqueId);
   loader(messageDiv)
+  OPENAI_API_KEY="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"
   //fetch the response or data from server
   const response= await fetch('https://chatbox-bqf2.onrender.com',{
     method:'POST',
     headers:{
-      'Content-Type':'application/json'
+      'Content-Type':'application/json',
+        'Authorization':`Bearer ${process.env.OPENAI_API_KEY}`
+    
     },
     body:JSON.stringify({
       prompt:data.get('prompt')
