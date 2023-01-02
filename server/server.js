@@ -11,7 +11,6 @@ const configuration=new Configuration({
 })
 const openai=new OpenAIApi(configuration);
 const app=express();
-app.use(express.urlencoded({extended:true}))
 //cors -cross orgin request
 app.use(cors());
 app.use(express.json());
@@ -26,13 +25,16 @@ app.post('/',async (req,res)=>{
         const response = await openai.createCompletion({
         model:"text-davinci-003",
         prompt:`${prompt}`,
-        temperature:0.7,
-        max_tokens:64,
+        temperature:0,
+        max_tokens:3000,
         top_p:1,
-        frequency_penalty:0,
+        frequency_penalty:0.5,
         presence_penalty:0,
    
         });
+        const headers={
+            'Authorization':`Bearer ${process.env.OPENAI_API_KEY}`
+        };
         res.status(200).send({
             bot:response.data.choices[0].text
         });
