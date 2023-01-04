@@ -23,7 +23,7 @@ const chatContainer=document.querySelector('#chat_container');
     }
   },20)
  }
-function generateUniqueid(){
+function generateUniqueId(){
   const timestamp=Date.now();
   const randomNumber=Math.random();
   const hexadecimalString=randomNumber.toString(16);
@@ -54,7 +54,7 @@ const handleSubmit=async(e)=>{
   chatContainer.innerHTML+=chatStripe(false, data.get('prompt'));
   form.reset();
   //bot's  chatstripe
-  const uniqueId=generateUniqueid();
+  const uniqueId=generateUniqueId();
   chatContainer.innerHTML+=chatStripe(true, ' ' , uniqueId);
 
   chatContainer.scrollTop=chatContainer.scrollHeight;
