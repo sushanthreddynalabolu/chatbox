@@ -67,6 +67,7 @@ const handleSubmit=async(e)=>{
     method:'POST',
     headers:{
       'Content-Type':'application/json',
+      'headers':headers
       // 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
 
     
