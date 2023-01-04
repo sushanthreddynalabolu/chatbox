@@ -74,7 +74,7 @@ const handleSubmit=async(e)=>{
   })
   clearInterval(loadInterval);
   messageDiv.innerHTML=' ';
-  if(response.ok){
+  if(response==true){
     const data=await response.json();
     const parsedData=data.bot.trim();
     typeText(messageDiv,parsedData)
