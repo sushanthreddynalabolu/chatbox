@@ -66,7 +66,8 @@ const handleSubmit=async(e)=>{
   const response= await fetch('https://chatbox-bqf2.onrender.com',{
     method:'POST',
     headers:{
-      'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+      'Content-Type':'application/json',
+      // 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
 
     
     },
