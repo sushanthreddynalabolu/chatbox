@@ -65,8 +65,7 @@ const handleSubmit=async(e)=>{
   const response= await fetch('https://chatbox-bqf2.onrender.com',{
     method:'POST',
     headers:{
-      'Content-Type':'application/json',
-      'Authorization':'Bearer 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'
+      'Content-Type':'application/json'
     
     },
     body:JSON.stringify({
