@@ -67,7 +67,7 @@ const handleSubmit=async(e)=>{
     method:'POST',
     headers:{
       'Content-Type':'application/json',
-      'Authorization': 'Bearer OPENAI_API_KEY'
+      'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
 
     
     },
@@ -77,7 +77,8 @@ const handleSubmit=async(e)=>{
   })
   clearInterval(loadInterval);
   messageDiv.innerHTML=' ';
-  if(response==true){
+  if(response.ok){
+
     const data=await response.json();
     const parsedData=data.bot.trim();
     typeText(messageDiv,parsedData)
