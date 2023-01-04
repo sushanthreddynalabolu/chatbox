@@ -66,6 +66,7 @@ const handleSubmit=async(e)=>{
     method:'POST',
     headers:{
       'Content-Type':'application/json',
+      'Authorization':'Bearer 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'
     
     },
     body:JSON.stringify({
