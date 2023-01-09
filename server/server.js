@@ -33,9 +33,6 @@ app.post('/',async (req,res)=>{
         headers:headers
    
         });
-        const headers={
-            'Authorization':`Bearer ${process.env.OPENAI_API_KEY}`
-        }
         
         res.status(200).send({
             bot:response.data.choices[0].text

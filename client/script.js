@@ -63,19 +63,17 @@ const handleSubmit=async(e)=>{
   OPENAI_API_KEY="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"
  
   //fetch the response or data from server
-  const response= await fetch('https://chatbox-bqf2.onrender.com',{
-    method:'POST',
-    headers:{
-      'Content-Type':'application/json',
-      'headers':headers
-      // 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-
-    
-    },
-    body:JSON.stringify({
-      prompt:data.get('prompt')
-    })
+  const response = await fetch('https://chatbox-bqf2.onrender.com', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'headers': headers,
+    'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+  },
+  body: JSON.stringify({
+    prompt: data.get('prompt')
   })
+});
   clearInterval(loadInterval);
   messageDiv.innerHTML=' ';
   if(response.ok){
